@@ -1,0 +1,262 @@
+@charset "UTF-8";
+
+/* 초기화 태그 */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 10px;
+}
+
+ul, li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none !important;
+	color: inherit !important; /* 부모태그의 컬러를 상속받아서 사용 */
+	cursor: pointer;
+}
+
+/* 공통 */
+.bt_wrap {
+	margin-top: 30px;
+	text-align: center;
+	font-size: 0;
+}
+
+.bt_wrap a {
+	display: inline-block;
+	min-width: 80px; /* 80px보다 작아지지 X */
+	margin-left: 10px;
+	padding: 10px;
+	border: 1px solid #000;
+	border-radius: 2px;
+	font-size: 1.4rem; /* 루트태그(html)의 1.4배 */
+	text-align: center;
+}
+
+.bt_wrap a:hover {
+	text-decoration: underline;
+}
+
+.bt_wrap a.on { /* a태그면서 on 클래스를 가진 */
+	background: #000;
+	color: #fff !important;
+}
+
+/* index.jsp */
+.wrap {
+	width: 1000px;
+	margin: 0 auto; /* 가운데 정렬(width 필수) */
+}
+
+.customer_list {
+	width: 100%;
+	border-top: 1px solid #444444;
+	border-collapse: collapse;
+	font-size: 1.5rem;
+}
+
+.customer_list caption {
+	padding: 30px;
+}
+
+.customer_list th, .customer_list td {
+	border-bottom: 1px solid #444444;
+	padding: 10px;
+	text-align: center;
+}
+
+.customer_list td.title>a:hover {
+	text-decoration: underline;
+}
+
+.board_page {
+	margin-top: 30px;
+}
+
+.board_page a:hover {
+	text-decoration: underline;
+}
+
+.board_page a.bt {
+	font-size: 1.2rem;
+	letter-spacing: -1px;
+}
+
+.board_page a.num {
+	font-size: 1.4rem;
+}
+
+.board_page a.num.on {
+	border-color: #000;
+	background: #000;
+	color: #fff;
+}
+
+.profile {
+	padding: 3%;
+	margin-top: 3%;
+	margin-bottom: 3%;
+	border-radius: 0.5rem;
+	background: #fff;
+}
+
+.profile-img {
+	text-align: center;
+	height: 150px;
+}
+
+.profile-img img {
+	width: 70%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.profile-img .file {
+	position: relative;
+	overflow: hidden;
+	margin-top: -20%;
+	width: 70%;
+	border: none;
+	border-radius: 0;
+	font-size: 15px;
+	background: #212529b8;
+}
+
+.profile-img .file input {
+	position: absolute;
+	opacity: 0;
+	right: 0;
+	top: 0;
+}
+
+.profile-head {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.profile-head h5 {
+	font-size: 17px;
+	color: #333;
+}
+
+.profile-edit-btn {
+	display: inline-block;
+	margin-top: 20px;
+	width: 80%;
+	height: fit-content;
+	padding: 10px;
+	border: 1px solid #000;
+	border-radius: 2px;
+	font-size: 1rem;
+	text-align: center;
+}
+
+.point > p {
+	font-size: 12px;
+	color: #818182;
+	margin: 0 !important;
+}
+
+.point > p > span {
+	color: #495057;
+	font-size: 15px;
+	font-weight: 600;
+}
+
+.main_info {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.info {
+	margin-top: 20px;
+	padding-right: 5%;
+}
+
+.info h5 {
+	font-size: 20px;
+    color: #818182;
+    font-weight: 600;
+    margin-top: -3%;
+    margin-left: 5%;
+    margin-bottom: 20px;
+}
+
+.col-md-3 {
+	display: flex;
+	align-items: center;
+}
+
+.detail label {
+	font-size: 1.5rem;
+	font-weight: 500;
+}
+
+.detail p, .form-control, .form-check-label, #grade {
+	margin: 0.5rem;
+	font-size: 1.2rem !important;
+	font-weight: bold !important;
+}
+
+.form-check-inline {
+	margin-left: 1rem;
+}
+
+input::placeholder {
+	color: #ccc !important;
+}
+
+.necessary::after {
+	content: "*";
+}
+
+/* 768 ~ 1000px */
+@media all and (max-width: 1000px) {
+	.wrap {
+		width: 100vw; /* 뷰포트의 크기에 맞춰서 width를 100%로*/
+	}
+	
+	/* detail, edit */
+	
+	hr {
+		margin: 1rem !important;
+	}
+	
+	.detail {
+		padding-left: calc(var(--bs-gutter-x)* .5);
+	}
+}
+
+/* 0 ~ 767 */
+@media all and (max-width: 767px) {
+	/* index.jsp 반응형 적용 */
+	.wrap {
+		width: 95vw;
+		margin: 0 auto;
+	}
+	
+	/* detail, edit */
+	.profile-img .file {
+		margin-top: -10%;
+	}
+	
+	.profile-head {
+		margin-top: 10px;
+	}
+	
+	hr {
+		margin-top: 3rem !important;
+	}
+	
+	.detail {
+		padding-left: 10%;
+	}
+}
